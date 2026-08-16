@@ -10,13 +10,13 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --red:     #2a6e6e;
-      --red-dim: #1f5252;
-      --ink:     #1a1a1a;
-      --muted:   #555;
-      --rule:    #e0e0e0;
-      --bg:      #ffffff;
-      --sidebar: 260px;
+      --teal:     #2a6e6e;
+      --teal-dim: #1f5252;
+      --ink:      #1a1a1a;
+      --muted:    #555;
+      --rule:     #e0e0e0;
+      --bg:       #ffffff;
+      --sidebar:  260px;
     }
 
     body {
@@ -28,7 +28,7 @@
     }
 
     header {
-      border-top: 4px solid var(--red);
+      border-top: 4px solid var(--teal);
       padding: 0 2rem;
       display: flex;
       align-items: center;
@@ -51,7 +51,7 @@
       text-decoration: none;
       transition: color .15s;
     }
-    header a:hover { color: var(--red); }
+    header a:hover { color: var(--teal); }
 
     .page {
       max-width: 980px;
@@ -100,7 +100,7 @@
       gap: .45rem;
     }
 
-    .contact-list a { color: var(--red); text-decoration: none; }
+    .contact-list a { color: var(--teal); text-decoration: none; }
     .contact-list a:hover { text-decoration: underline; }
 
     .contact-list .label {
@@ -114,7 +114,7 @@
       display: inline-block;
       margin-top: 1.4rem;
       padding: .45rem 1.1rem;
-      background: var(--red);
+      background: var(--teal);
       color: #fff;
       font-size: 13px;
       font-weight: 500;
@@ -122,7 +122,14 @@
       border-radius: 3px;
       transition: background .15s;
     }
-    .cv-btn:hover { background: var(--red-dim); }
+    .cv-btn:hover { background: var(--teal-dim); }
+
+    .cv-note {
+      display: block;
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: .4rem;
+    }
 
     main { grid-column: 2; }
 
@@ -132,7 +139,7 @@
       font-family: 'EB Garamond', serif;
       font-size: 1.2rem;
       font-weight: 600;
-      color: var(--red);
+      color: var(--teal);
       border-bottom: 1px solid var(--rule);
       padding-bottom: .35rem;
       margin-bottom: 1rem;
@@ -141,6 +148,9 @@
 
     p { margin-bottom: .75rem; }
     p:last-child { margin-bottom: 0; }
+
+    a.inline { color: var(--teal); text-decoration: none; }
+    a.inline:hover { text-decoration: underline; }
 
     .pub-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
 
@@ -151,11 +161,11 @@
       line-height: 1.6;
       transition: border-color .15s;
     }
-    .pub-list li:hover { border-left-color: var(--red); }
+    .pub-list li:hover { border-left-color: var(--teal); }
 
     .pub-list .authors { color: var(--muted); font-size: 13px; }
     .pub-list .venue   { font-style: italic; color: var(--muted); font-size: 13px; }
-    .pub-list a        { color: var(--red); text-decoration: none; font-size: 12px; }
+    .pub-list a        { color: var(--teal); text-decoration: none; font-size: 12px; }
     .pub-list a:hover  { text-decoration: underline; }
 
     .badge {
@@ -165,7 +175,7 @@
       border-radius: 2px;
       margin-left: 4px;
       background: #e6f2f2;
-      color: var(--red);
+      color: var(--teal);
       font-weight: 500;
     }
 
@@ -181,7 +191,7 @@
     .news-date {
       font-size: 12px;
       font-weight: 500;
-      color: var(--red);
+      color: var(--teal);
       white-space: nowrap;
       min-width: 58px;
     }
@@ -227,33 +237,20 @@
       <li><span class="label">GitHub</span> <a href="https://github.com/vahidhakimian" target="_blank">vahidhakimian</a></li>
     </ul>
     <a href="CV.pdf" class="cv-btn" target="_blank">Download CV</a>
+    <span class="cv-note">Updated Aug. 2026</span>
   </aside>
 
   <main>
 
     <section id="bio">
       <h2>Bio</h2>
-      <p>
-        I am a Ph.D. candidate in Electrical Power Engineering at the University of Calgary,
-        affiliated with the
-        <a href="https://mfarrokhabadi.github.io/dgri.html" style="color:var(--red);text-decoration:none;">DGRI Lab</a> and the
-        <a href="https://gridforesight.ca/" style="color:var(--red);text-decoration:none;">Grid Foresight Lab</a>.
-      </p>
-      <p>
-        Prior to my Ph.D., I worked for nearly five years as a High Voltage Substation Design Engineer
-        at Khorasan Power Engineering Consultant (Moniran) Company, designing over 20 high-voltage
-        substations across eastern Iran. I hold an M.Sc. from Tarbiat Modares University and a B.Sc.
-        from the University of Tehran, both in Electrical Power Engineering.
-      </p>
+      <p>I am a Ph.D. candidate in Electrical Power Engineering at the University of Calgary, affiliated with the <a class="inline" href="https://mfarrokhabadi.github.io/dgri.html" target="_blank">DGRI Lab</a> and the <a class="inline" href="https://gridforesight.ca/" target="_blank">Grid Foresight Lab</a>. My research focuses on emission-aware transactive energy markets and distribution network optimization.</p>
+      <p>My background spans both industry and academia over nearly a decade. Prior to my Ph.D., I worked for nearly five years as a High Voltage Substation Design Engineer at Khorasan Power Engineering Consultant (Moniran) Company. I have hands-on experience in state estimation, power system protection, T&amp;D operation, factory equipment testing, and on-site field inspection. I hold an M.Sc. from Tarbiat Modares University and a B.Sc. from the University of Tehran, both in Electrical Power Engineering.</p>
     </section>
 
     <section id="research">
       <h2>Research</h2>
-      <p>
-        My research focuses on transactive energy markets for net-zero electrical distribution systems.
-        I develop data-driven frameworks for distribution locational marginal emission (DLME) estimation
-        and emission-aware market clearing under congested network conditions.
-      </p>
+      <p>My research focuses on transactive energy markets for net-zero electrical distribution systems. I develop data-driven frameworks for distribution locational marginal emission (DLME) estimation and emission-aware market clearing under congested network conditions.</p>
     </section>
 
     <section id="publications">
@@ -263,48 +260,55 @@
         <li>
           <div>Emission-aware operation of standalone electrical energy storage systems</div>
           <div class="authors">H. Yao, <strong>V. Hakimian</strong>, M. Farrokhabadi, H. Zareipour</div>
-          <div class="venue">Proc. HICSS, Jan. 2026 <span class="badge">Best Paper Nomination</span></div>
+          <div class="venue">Proceedings of the 59th Hawaii International Conference on System Sciences (HICSS) <span class="badge">Best Paper Nomination</span></div>
           <div><a href="https://doi.org/10.24251/HICSS.2026.390" target="_blank">doi.org/10.24251/HICSS.2026.390</a></div>
         </li>
 
         <li>
           <div>Comprehensive study on transformer fault detection via frequency response analysis</div>
           <div class="authors">S. E. H. Kakolaki, <strong>V. Hakimian</strong>, J. Sadeh, E. Rakhshani</div>
-          <div class="venue">IEEE Access, vol. 11, 2023</div>
+          <div class="venue">IEEE Access, vol. 11, pp. 81852–81881, 2023</div>
           <div><a href="https://doi.org/10.1109/ACCESS.2023.3300378" target="_blank">doi.org/10.1109/ACCESS.2023.3300378</a></div>
         </li>
 
         <li>
-          <div>An optimization-based robust dynamic state estimation for power systems with synchronized phasor measurement units</div>
+          <div>An optimization-based robust dynamic state estimation for power systems with synchronized phasor measurement units, involving disturbance rejection</div>
           <div class="authors"><strong>V. Hakimian</strong>, H. Seifi</div>
-          <div class="venue">Int. Trans. Electr. Energy Syst., 2023</div>
+          <div class="venue">International Transactions on Electrical Energy Systems, vol. 2023, 2023</div>
           <div><a href="https://doi.org/10.1155/2023/1820478" target="_blank">doi.org/10.1155/2023/1820478</a></div>
         </li>
 
         <li>
-          <div>Grounding transformer transient analysis caused by earth fault clearance in a subtransmission substation</div>
+          <div>Grounding transformer transient analysis caused by earth fault clearance in a subtransmission substation and proposing appropriate solutions</div>
           <div class="authors"><strong>V. Hakimian</strong>, M. Davarpanah</div>
-          <div class="venue">17th Int. Conf. Prot. Autom. Power Syst. IPAPS 2023</div>
+          <div class="venue">17th International Conference on Protection and Automation of Power Systems (IPAPS 2023), pp. 1–7, 2023</div>
           <div><a href="https://doi.org/10.1109/IPAPS58344.2023.10123315" target="_blank">doi.org/10.1109/IPAPS58344.2023.10123315</a></div>
         </li>
 
       </ul>
-      <p style="margin-top:1rem; font-size:13px; color:var(--muted);">For a complete list, see my <a href="https://scholar.google.com/citations?user=nroIoUEAAAAJ&hl=en&oi=ao" style="color:var(--red);" target="_blank">Google Scholar</a> or <a href="CV.pdf" style="color:var(--red);" target="_blank">CV</a>.</p>
+      <p style="margin-top:1rem; font-size:13px; color:var(--muted);">For a complete list, see my <a href="https://scholar.google.com/citations?user=nroIoUEAAAAJ&hl=en&oi=ao" style="color:var(--teal);" target="_blank">Google Scholar</a> or <a href="CV.pdf" style="color:var(--teal);" target="_blank">CV</a>.</p>
     </section>
 
     <section id="news">
       <h2>News</h2>
       <ul class="news-list">
-        <li><span class="news-date">07/2026</span><span>Presented poster SPC-215 at the IEEE PES General Meeting 2026 Student Poster Contest, Montreal.</span></li>
+        <li><span class="news-date">08/2026</span><span>Served as a Technical Program Committee (TPC) Member for the 2026 IEEE Electrical Power and Energy Conference (EPEC).</span></li>
+        <li><span class="news-date">07/2026</span><span>Presented a poster at the IEEE PES General Meeting 2026 Student Poster Contest, Montreal, Canada.</span></li>
         <li><span class="news-date">06/2026</span><span>Appointed Vice Chair of the Academic Events Committee, GSA, University of Calgary.</span></li>
-        <li><span class="news-date">01/2026</span><span>Our paper on emission-aware operation of electrical energy storage systems was nominated for the best paper award at HICSS 2026.</span></li>
+        <li><span class="news-date">05/2026</span><span>Passed the Ph.D. candidacy exam, Department of Electrical &amp; Software Engineering, University of Calgary.</span></li>
+        <li><span class="news-date">03/2026</span><span>Received the Graduate Student Experience Initiative Award, GSA, University of Calgary.</span></li>
+        <li><span class="news-date">01/2026</span><span>Received a Best Paper Award Nomination at the 59th Hawaii International Conference on System Sciences (HICSS), for "Emission-Aware Operation of Standalone Electrical Energy Storage Systems."</span></li>
+        <li><span class="news-date">10/2025</span><span>Attended the IEEE Electrical Power and Energy Conference (EPEC 2025), Waterloo, Canada.</span></li>
         <li><span class="news-date">09/2025</span><span>Received the Alberta Graduate Excellence Scholarship, University of Calgary.</span></li>
         <li><span class="news-date">08/2025</span><span>Presented at the WIRED Symposium, University of Calgary.</span></li>
         <li><span class="news-date">06/2025</span><span>Received the Teaching Assistant Award for ENEL 487, ESE Dept., University of Calgary.</span></li>
         <li><span class="news-date">04/2025</span><span>Received the Graduate Representative Council Initiative Award, GSA, University of Calgary.</span></li>
-        <li><span class="news-date">03/2025</span><span>Received the ESE Graduate Research Award for the second consecutive year, Schulich School of Engineering.</span></li>
-        <li><span class="news-date">05/2025</span><span>Presented at the Alberta Power Industry Consortium (APIC).</span></li>
-        <li><span class="news-date">08/2023</span><span>Joined the DGRI Lab at the University of Calgary as a Ph.D. candidate.</span></li>
+        <li><span class="news-date">03/2025</span><span>Received the ESE Graduate Research Award, Schulich School of Engineering, University of Calgary.</span></li>
+        <li><span class="news-date">11/2023</span><span>Appointed as PES Chair, IEEE University of Calgary Student Branch.</span></li>
+        <li><span class="news-date">08/2023</span><span>Joined the DGRI Lab and Grid Foresight Lab at the University of Calgary as a Ph.D. student.</span></li>
+        <li><span class="news-date">06/2023</span><span>Appointed as a reviewer for IEEE Access, focusing on energy systems, smart grids, and emerging power technologies.</span></li>
+        <li><span class="news-date">02/2023</span><span>Received a Ph.D. admission offer with a four-year full-funding scholarship in Electrical Engineering, University of Calgary, Canada.</span></li>
+        <li><span class="news-date">11/2021</span><span>Received a Ph.D. admission offer with a three-year full-funding scholarship in Electrical Engineering, University of Pisa, Italy.</span></li>
       </ul>
     </section>
 
