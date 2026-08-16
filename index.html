@@ -179,11 +179,17 @@
       font-weight: 500;
     }
 
-    .news-list { list-style: none; display: flex; flex-direction: column; gap: .65rem; }
+    .news-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .65rem;
+    }
 
     .news-list li {
       font-size: 14px;
-      display: flex;
+      display: grid;
+      grid-template-columns: 72px 1fr;
       gap: 1rem;
       align-items: baseline;
     }
@@ -193,7 +199,7 @@
       font-weight: 500;
       color: var(--teal);
       white-space: nowrap;
-      min-width: 58px;
+      text-align: center;
     }
 
     footer {
@@ -215,7 +221,6 @@
 
 <header>
   <a href="#bio">Bio</a>
-  <a href="#research">Research</a>
   <a href="#publications">Publications</a>
   <a href="#news">News</a>
 </header>
@@ -246,11 +251,6 @@
       <h2>Bio</h2>
       <p>I am a Ph.D. candidate in Electrical Power Engineering at the University of Calgary, affiliated with the <a class="inline" href="https://mfarrokhabadi.github.io/dgri.html" target="_blank">DGRI Lab</a> and the <a class="inline" href="https://gridforesight.ca/" target="_blank">Grid Foresight Lab</a>. My research focuses on emission-aware transactive energy markets and distribution network optimization.</p>
       <p>My background spans both industry and academia over nearly a decade. Prior to my Ph.D., I worked for nearly five years as a High Voltage Substation Design Engineer at Khorasan Power Engineering Consultant (Moniran) Company. I have hands-on experience in state estimation, power system protection, T&amp;D operation, factory equipment testing, and on-site field inspection. I hold an M.Sc. from Tarbiat Modares University and a B.Sc. from the University of Tehran, both in Electrical Power Engineering.</p>
-    </section>
-
-    <section id="research">
-      <h2>Research</h2>
-      <p>My research focuses on transactive energy markets for net-zero electrical distribution systems. I develop data-driven frameworks for distribution locational marginal emission (DLME) estimation and emission-aware market clearing under congested network conditions.</p>
     </section>
 
     <section id="publications">
