@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Vahid Hakimian – Ph.D. Candidate in Electrical Power Engineering, University of Calgary" />
+  <title>Vahid Hakimian</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red:     #CC0000;
+      --red-dim: #a30000;
+      --ink:     #1a1a1a;
+      --muted:   #555;
+      --rule:    #e0e0e0;
+      --bg:      #ffffff;
+      --sidebar: 260px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--ink);
+      background: var(--bg);
+    }
+
+    header {
+      border-top: 4px solid var(--red);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 1.8rem;
+      height: 52px;
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 0 var(--rule);
+    }
+
+    header a {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color .15s;
+    }
+    header a:hover { color: var(--red); }
+
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 3rem 2rem 5rem;
+      display: grid;
+      grid-template-columns: var(--sidebar) 1fr;
+      gap: 0 3.5rem;
+    }
+
+    aside {
+      grid-column: 1;
+      grid-row: 1 / 99;
+      padding-top: .25rem;
+    }
+
+    .photo {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 4px;
+      display: block;
+      margin-bottom: 1.25rem;
+    }
+
+    .name {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.55rem;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: .3rem;
+    }
+
+    .role {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+      margin-bottom: 1.1rem;
+    }
+
+    .contact-list {
+      list-style: none;
+      font-size: 13px;
+      display: flex;
+      flex-direction: column;
+      gap: .45rem;
+    }
+
+    .contact-list a { color: var(--red); text-decoration: none; }
+    .contact-list a:hover { text-decoration: underline; }
+
+    .contact-list .label {
+      color: var(--muted);
+      font-weight: 500;
+      display: inline-block;
+      min-width: 52px;
+    }
+
+    .cv-btn {
+      display: inline-block;
+      margin-top: 1.4rem;
+      padding: .45rem 1.1rem;
+      background: var(--red);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 3px;
+      transition: background .15s;
+    }
+    .cv-btn:hover { background: var(--red-dim); }
+
+    main { grid-column: 2; }
+
+    section { margin-bottom: 2.8rem; }
+
+    h2 {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--red);
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: .35rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+
+    p { margin-bottom: .75rem; }
+    p:last-child { margin-bottom: 0; }
+
+    .pub-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+
+    .pub-list li {
+      padding-left: 1rem;
+      border-left: 2px solid var(--rule);
+      font-size: 14px;
+      line-height: 1.6;
+      transition: border-color .15s;
+    }
+    .pub-list li:hover { border-left-color: var(--red); }
+
+    .pub-list .authors { color: var(--muted); font-size: 13px; }
+    .pub-list .venue   { font-style: italic; color: var(--muted); font-size: 13px; }
+    .pub-list a        { color: var(--red); text-decoration: none; font-size: 12px; }
+    .pub-list a:hover  { text-decoration: underline; }
+
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      padding: 1px 6px;
+      border-radius: 2px;
+      margin-left: 4px;
+      background: #fdeaea;
+      color: var(--red);
+      font-weight: 500;
+    }
+
+    .news-list { list-style: none; display: flex; flex-direction: column; gap: .65rem; }
+
+    .news-list li {
+      font-size: 14px;
+      display: flex;
+      gap: 1rem;
+      align-items: baseline;
+    }
+
+    .news-date {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--red);
+      white-space: nowrap;
+      min-width: 58px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: #aaa;
+      padding: 2rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    @media (max-width: 700px) {
+      .page { grid-template-columns: 1fr; }
+      aside { grid-row: auto; }
+      .photo { max-width: 180px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="#bio">Bio</a>
+  <a href="#research">Research</a>
+  <a href="#publications">Publications</a>
+  <a href="#news">News</a>
+</header>
+
+<div class="page">
+
+  <aside>
+    <img src="profile.jpg" alt="Vahid Hakimian" class="photo" />
+    <p class="name">Vahid Hakimian</p>
+    <p class="role">
+      Ph.D. Candidate<br>
+      Electrical Power Engineering<br>
+      University of Calgary
+    </p>
+    <ul class="contact-list">
+      <li><span class="label">Email</span> <a href="mailto:vahid.hakimian@ucalgary.ca">vahid.hakimian@ucalgary.ca</a></li>
+      <li><span class="label">Scholar</span> <a href="https://scholar.google.com/citations?user=nroIoUEAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a></li>
+      <li><span class="label">LinkedIn</span> <a href="https://www.linkedin.com/in/vahid-hakimian/" target="_blank">vahid-hakimian</a></li>
+      <li><span class="label">GitHub</span> <a href="https://github.com/vahidhakimian" target="_blank">vahidhakimian</a></li>
+    </ul>
+    <a href="CV.pdf" class="cv-btn" target="_blank">Download CV</a>
+  </aside>
+
+  <main>
+
+    <section id="bio">
+      <h2>Bio</h2>
+      <p>I am a Ph.D. candidate in Electrical Power Engineering at the University of Calgary, supervised by <a href="https://mfarrokhabadi.github.io/" style="color:var(--red);text-decoration:none;">Dr. Mostafa Farrokhabadi</a> and Dr. Hamidreza Zareipour. I am affiliated with the <a href="https://mfarrokhabadi.github.io/dgri.html" style="color:var(--red);text-decoration:none;">DGRI Lab</a> and the <a href="https://gridforesight.ca/" style="color:var(--red);text-decoration:none;">Grid Foresight Lab</a>.</p>
+      <p>Prior to my Ph.D., I worked for nearly five years as a High Voltage Substation Design Engineer at Khorasan Power Engineering Consultant (Moniran) Company, designing over 20 high-voltage substations across eastern Iran. I hold an M.Sc. from Tarbiat Modares University and a B.Sc. from the University of Tehran, both in Electrical Power Engineering.</p>
+    </section>
+
+    <section id="research">
+      <h2>Research</h2>
+      <p>My research focuses on transactive energy markets for net-zero electrical distribution systems. I develop data-driven frameworks for distribution locational marginal emission (DLME) estimation and emission-aware market clearing under congested network conditions.</p>
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+      <ul class="pub-list">
+
+        <li>
+          <div>Data-driven distribution locational marginal emission estimation in congested distribution network operation</div>
+          <div class="authors"><strong>V. Hakimian</strong>, M. Farrokhabadi, H. Zareipour</div>
+          <div class="venue">IEEE Trans. Power Systems &mdash; under preparation <span class="badge">2026</span></div>
+        </li>
+
+        <li>
+          <div>Emission-aware transactive demand response</div>
+          <div class="authors">H. Yao, <strong>V. Hakimian</strong>, M. Farrokhabadi, H. Zareipour</div>
+          <div class="venue">IEEE Trans. Smart Grid &mdash; under preparation <span class="badge">2026</span></div>
+        </li>
+
+        <li>
+          <div>Emission-aware operation of standalone electrical energy storage systems</div>
+          <div class="authors">H. Yao, <strong>V. Hakimian</strong>, M. Farrokhabadi, H. Zareipour</div>
+          <div class="venue">Proc. HICSS, Jan. 2026 <span class="badge">Best Paper Nomination</span></div>
+          <div><a href="https://doi.org/10.24251/HICSS.2026.390" target="_blank">doi.org/10.24251/HICSS.2026.390</a></div>
+        </li>
+
+        <li>
+          <div>Comprehensive study on transformer fault detection via frequency response analysis</div>
+          <div class="authors">S. E. H. Kakolaki, <strong>V. Hakimian</strong>, J. Sadeh, E. Rakhshani</div>
+          <div class="venue">IEEE Access, vol. 11, 2023</div>
+          <div><a href="https://doi.org/10.1109/ACCESS.2023.3300378" target="_blank">doi.org/10.1109/ACCESS.2023.3300378</a></div>
+        </li>
+
+        <li>
+          <div>An optimization-based robust dynamic state estimation for power systems with synchronized phasor measurement units</div>
+          <div class="authors"><strong>V. Hakimian</strong>, H. Seifi</div>
+          <div class="venue">Int. Trans. Electr. Energy Syst., 2023</div>
+          <div><a href="https://doi.org/10.1155/2023/1820478" target="_blank">doi.org/10.1155/2023/1820478</a></div>
+        </li>
+
+      </ul>
+      <p style="margin-top:1rem; font-size:13px; color:var(--muted);">For a complete list, see my <a href="https://scholar.google.com/citations?user=nroIoUEAAAAJ&hl=en&oi=ao" style="color:var(--red);" target="_blank">Google Scholar</a> or <a href="CV.pdf" style="color:var(--red);" target="_blank">CV</a>.</p>
+    </section>
+
+    <section id="news">
+      <h2>News</h2>
+      <ul class="news-list">
+        <li><span class="news-date">07/2026</span><span>Presented poster SPC-215 at the IEEE PES General Meeting 2026 Student Poster Contest, Montreal.</span></li>
+        <li><span class="news-date">06/2026</span><span>Appointed Vice Chair of the Academic Events Committee, GSA, University of Calgary.</span></li>
+        <li><span class="news-date">01/2026</span><span>Our paper on emission-aware operation of electrical energy storage systems was nominated for the best paper award at HICSS 2026.</span></li>
+        <li><span class="news-date">09/2025</span><span>Received the Alberta Graduate Excellence Scholarship, University of Calgary.</span></li>
+        <li><span class="news-date">08/2025</span><span>Presented at the WIRED Symposium, University of Calgary.</span></li>
+        <li><span class="news-date">06/2025</span><span>Received the Teaching Assistant Award for ENEL 487, ESE Dept., University of Calgary.</span></li>
+        <li><span class="news-date">04/2025</span><span>Received the Graduate Representative Council Initiative Award, GSA, University of Calgary.</span></li>
+        <li><span class="news-date">03/2025</span><span>Received the ESE Graduate Research Award for the second consecutive year, Schulich School of Engineering.</span></li>
+        <li><span class="news-date">05/2025</span><span>Presented at the Alberta Power Industry Consortium (APIC).</span></li>
+        <li><span class="news-date">08/2023</span><span>Joined the DGRI Lab at the University of Calgary as a Ph.D. candidate.</span></li>
+      </ul>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  &copy; 2026 Vahid Hakimian. All rights reserved.
+</footer>
+
+</body>
+</html>
